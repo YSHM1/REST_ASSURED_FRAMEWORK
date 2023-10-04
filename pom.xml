@@ -1,0 +1,136 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.RestAssured</groupId>
+	<artifactId>REST_ASSURED_FRAMEWORK</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<restAssuredVersion>5.3.0</restAssuredVersion>
+		<testNGVersion>6.9.8</testNGVersion>
+		<jacksonDatabindVersion>2.14.1</jacksonDatabindVersion>
+		<gsonVersion>2.10</gsonVersion>
+		<extentReportVersion>5.0.9</extentReportVersion>
+		<lombokVersion>1.18.24</lombokVersion>
+		<apacheCommonLangVersion>3.12.0</apacheCommonLangVersion>
+		<mavenSurefirePluginVersion>3.0.0-M7</mavenSurefirePluginVersion>
+		<javers-coreVersion>6.12.0</javers-coreVersion>
+		<apachePoiCommonVersion>5.2.3</apachePoiCommonVersion>
+		<apachePoiOoxmlVersion>5.2.3</apachePoiOoxmlVersion>
+		<poijiVersion>4.1.1</poijiVersion>
+	</properties>
+
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${restAssuredVersion}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testNGVersion}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jacksonDatabindVersion}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${gsonVersion}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extentReportVersion}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombokVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${apacheCommonLangVersion}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.datafaker</groupId>
+			<artifactId>datafaker</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+
+		<!-- Use to compare 2 object to check what is difference between 2 Objects -->
+		<!-- https://mvnrepository.com/artifact/org.javers/javers-core -->
+		<dependency>
+			<groupId>org.javers</groupId>
+			<artifactId>javers-core</artifactId>
+			<version>${javers-coreVersion}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${apachePoiCommonVersion}</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${apachePoiOoxmlVersion}</version>
+		</dependency>
+		
+		<!-- Use for Mapping the Excel Data with Java Class/ POJO Class -->
+		<!-- https://mvnrepository.com/artifact/com.github.ozlerhakan/poiji -->
+		<dependency>
+			<groupId>com.github.ozlerhakan</groupId>
+			<artifactId>poiji</artifactId>
+			<version>${poijiVersion}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${mavenSurefirePluginVersion}</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<forkCount>0</forkCount>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>
